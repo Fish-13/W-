@@ -1,0 +1,62 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #000;
+    overflow: hidden;
+    font-family: 'Courier New', monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Canvasen ligger i bakgrunden */
+#matrix {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.interface {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    transition: opacity 0.5s ease;
+}
+
+.title {
+    color: #ff0000;
+    font-size: 5rem;
+    text-shadow: 0 0 20px #ff0000;
+    margin-bottom: 30px;
+    transition: opacity 0.3s;
+}
+
+.hacker-btn {
+    display: inline-block;
+    padding: 20px 40px;
+    margin: 10px;
+    color: #ff0000;
+    text-decoration: none;
+    border: 2px solid #ff0000;
+    background: rgba(0, 0, 0, 0.8);
+    font-weight: bold;
+    font-size: 1.5rem;
+    transition: all 0.3s;
+    position: relative;
+}
+
+/* DET HÄR GÖR ALLT MÖRKT UTOM KNAPPEN */
+body:has(.hacker-btn:hover) #matrix,
+body:has(.hacker-btn:hover) .title {
+    opacity: 0.1; /* Allt i bakgrunden blir nästan osynligt */
+}
+
+.hacker-btn:hover {
+    transform: scale(1.2);
+    background: #ff0000;
+    color: #000;
+    box-shadow: 0 0 50px #ff0000;
+    z-index: 10;
+}
